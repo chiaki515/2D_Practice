@@ -25,22 +25,22 @@ public class JumpController : MonoBehaviour
 
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit2D hit2d = Physics2D.Raycast((Vector2)ray.origin, (Vector2)ray.direction);
+            clickedGameObject = hit2d.transform.gameObject;
 
-            if (hit2d)
+            if (hit2d && clickedGameObject.name=="Jump")
             {
-                clickedGameObject = hit2d.transform.gameObject;
                 this.animator.SetTrigger("spring_up");
+                //Debug.Log(hit2d.transform.gameObject.name);
             }
         }
     }
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-
         if (collision.gameObject.tag == "Player")
         {
-            AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
             //ジャンプ台アニメーション再生中かどうか
+            AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
             bool springTrigger = stateInfo.IsName("Base Layer.Jump");
 
             if (Jump && springTrigger)
