@@ -31,29 +31,32 @@ public class WindController : MonoBehaviour {
             {
                 windObject.SetActive(true);
                 this.animator.SetBool("WindBool", true);
-                Debug.Log(hit2d.transform.gameObject.name);
+                GetComponent<AreaEffector2D>().enabled = true;
+                //Debug.Log(hit2d.transform.gameObject.name);
             } 
         }else{
             windObject.SetActive(false);
             this.animator.SetBool("WindBool", false);
+            GetComponent<AreaEffector2D>().enabled = false;
         }
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            //送風機アニメーション再生中かどうか
-            AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
-            bool windBool = stateInfo.IsName("Base Layer.Wind");
+    //private void OnCollisionStay2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.tag == "Player")
+    //    {
+    //        //送風機アニメーション再生中かどうか
+    //        AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+    //        bool windBool = stateInfo.IsName("Base Layer.Wind");
 
-            if (Wind && windBool)
-            {
-                var relativeVelocity = velocity - collision.relativeVelocity;
-                player.GetComponent<Rigidbody2D>().AddForce(transform.right * relativeVelocity, ForceMode2D.Impulse);
-            }
-        }
-    }
+    //        if (Wind && windBool)
+    //        {
+    //            GetComponent<AreaEffector2D>().enabled = true;
+    //            //var relativeVelocity = velocity - collision.relativeVelocity;
+    //            //player.GetComponent<Rigidbody2D>().AddForce(transform.right * velocity, ForceMode2D.Impulse);
+    //        }
+    //    }
+    //}
 
 
 

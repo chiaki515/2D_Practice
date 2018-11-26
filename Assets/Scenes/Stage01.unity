@@ -383,7 +383,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 688162378}
   m_LocalRotation: {x: -0, y: -0, z: 0.012145237, w: 0.9999263}
-  m_LocalPosition: {x: 0.44, y: -1.81, z: 0}
+  m_LocalPosition: {x: -3.23, y: 3.41, z: 0}
   m_LocalScale: {x: 1.742, y: 0.831, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -546,6 +546,7 @@ GameObject:
   - component: {fileID: 1774954509}
   - component: {fileID: 1774954511}
   - component: {fileID: 1774954510}
+  - component: {fileID: 1774954512}
   m_Layer: 0
   m_Name: Wind
   m_TagString: Untagged
@@ -567,7 +568,7 @@ MonoBehaviour:
   Wind: 1
   player: {fileID: 2022327815}
   windObject: {fileID: 473630053}
-  velocity: {x: 0, y: 0}
+  velocity: {x: 3, y: 0}
 --- !u!212 &1774954507
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -621,7 +622,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1774954505}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.1, y: 0.2, z: 0}
+  m_LocalPosition: {x: -7.19, y: -0.59, z: 0}
   m_LocalScale: {x: 0.966, y: 2.214, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -656,8 +657,8 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_IsTrigger: 1
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
@@ -690,6 +691,25 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!249 &1774954512
+AreaEffector2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1774954505}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 256
+  m_UseGlobalAngle: 0
+  m_ForceAngle: 0
+  m_ForceMagnitude: 10
+  m_ForceVariation: 0
+  m_ForceTarget: 1
+  m_Drag: 0
+  m_AngularDrag: 0
 --- !u!1 &1919496935
 GameObject:
   m_ObjectHideFlags: 0
@@ -927,13 +947,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1935920182}
-  m_LocalRotation: {x: -0, y: -0, z: -0.00027997285, w: -1}
-  m_LocalPosition: {x: -2.989, y: -2.064, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 0.077432305, w: 0.99699765}
+  m_LocalPosition: {x: -2.93, y: -1.51, z: 0}
   m_LocalScale: {x: 11.015059, y: 0.863583, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.032}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 8.882}
 --- !u!1 &2022327815
 GameObject:
   m_ObjectHideFlags: 0
