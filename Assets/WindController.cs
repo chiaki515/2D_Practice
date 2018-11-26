@@ -9,7 +9,7 @@ public class WindController : MonoBehaviour {
     public bool Wind;
     public GameObject player;//Findより軽いから
     public GameObject windObject;
-    public Vector2 velocity; //飛ばしたい速度
+    //public Vector2 velocity; //飛ばしたい速度
 
     void Start()
     {
