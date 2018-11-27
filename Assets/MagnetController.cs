@@ -5,7 +5,7 @@ using UnityEngine;
 public class MagnetController : MonoBehaviour
 {
 
-    Animator animator;
+    //Animator animator;
     GameObject clickedGameObject;
     public bool Magnet;
     public GameObject player;//Findより軽いから
@@ -13,7 +13,7 @@ public class MagnetController : MonoBehaviour
 
     void Start()
     {
-        this.animator = GetComponent<Animator>();
+        //this.animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -30,16 +30,16 @@ public class MagnetController : MonoBehaviour
             if (hit2d && clickedGameObject.name == "Magnet")
             {
                 magnetObject.SetActive(true);
-                this.animator.SetBool("WindBool", true);
-                GetComponent<AreaEffector2D>().enabled = true;
+                //this.animator.SetBool("WindBool", true);
+                //GetComponent<AreaEffector2D>().enabled = true;
                 //Debug.Log(hit2d.transform.gameObject.name);
             }
         }
         else
         {
             magnetObject.SetActive(false);
-            this.animator.SetBool("WindBool", false);
-            GetComponent<AreaEffector2D>().enabled = false;
+            //this.animator.SetBool("WindBool", false);
+            //GetComponent<AreaEffector2D>().enabled = false;
         }
     }
 
